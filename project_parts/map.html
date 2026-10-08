@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Завдання 5: Інтерактивна карта України</title>
+</head>
+<body style="display: flex; flex-direction: column; align-items: center; font-family: Arial, sans-serif;">
+  <p><a href="../index.html">Повернутись на головну</a></p>
+
+  <div style="text-align: center; max-width: 900px;">
+    <h2>Інтерактивна карта областей України</h2>
+    <p style="color: #555;">Наведіть курсор або натисніть на область, щоб відкрити відповідну статтю у Вікіпедії:</p>
+
+    <!-- Зображення підключає карту через usemap -->
+    <img src="../img/ukraine-map.png" usemap="#ukrainemap" alt="Карта України" width="800" height="530" style="border: 2px solid #333;">
+
+    <map name="ukrainemap">
+      <!-- Чернівецька область -->
+      <area shape="poly" coords="230,350,270,335,295,355,275,385,240,375" target="_blank"
+            href="https://uk.wikipedia.org/wiki/Чернівецька_область" alt="Чернівецька область" title="Чернівецька область">
+
+      <!-- Івано-Франківська область -->
+      <area shape="poly" coords="170,300,225,290,240,345,190,360" target="_blank"
+            href="https://uk.wikipedia.org/wiki/Івано-Франківська_область" alt="Івано-Франківська область" title="Івано-Франківська область">
+
+      <!-- Львівська область -->
+      <area shape="poly" coords="120,200,180,205,190,265,140,285,115,245" target="_blank"
+            href="https://uk.wikipedia.org/wiki/Львівська_область" alt="Львівська область" title="Львівська область">
+
+      <!-- Київська область -->
+      <area shape="rect" coords="410,130,480,220" target="_blank"
+            href="https://uk.wikipedia.org/wiki/Київська_область" alt="Київська область" title="Київська область">
+
+      <!-- Одеська область -->
+      <area shape="poly" coords="390,320,460,330,460,420,380,440" target="_blank"
+            href="https://uk.wikipedia.org/wiki/Одеська_область" alt="Одеська область" title="Одеська область">
+
+      <!-- Харківська область -->
+      <area shape="circle" coords="630,220,50" target="_blank"
+            href="https://uk.wikipedia.org/wiki/Харківська_область" alt="Харківська область" title="Харківська область">
+
+      <!-- Дніпропетровська область -->
+      <area shape="rect" coords="530,260,630,330" target="_blank"
+            href="https://uk.wikipedia.org/wiki/Дніпропетровська_область" alt="Дніпропетровська область" title="Дніпропетровська область">
+    </map>
+  </div>
+</body>
+</html>
