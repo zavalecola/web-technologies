@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторна робота №6 - Завдання 4</title>
+    <!-- Підключення Google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ГОРИЗОНТАЛЬНА ПАНЕЛЬ НАВІГАЦІЇ (Липка / Sticky / Fixed у верхній частині) -->
+    <nav class="navbar-horizontal">
+        <ul class="nav-list">
+            <li class="nav-item active">
+                <a href="#"><span class="material-icons">home</span></a>
+            </li>
+            <li class="nav-item">
+                <a href="#"><span class="material-icons">search</span></a>
+                <!-- Випадаюче підменю (2-й рівень) -->
+                <ul class="dropdown">
+                    <li><a href="#">Статті</a></li>
+                    <li><a href="#">Проєкти</a>
+                        <!-- 3-й рівень -->
+                        <ul class="dropdown">
+                            <li><a href="#">Веб</a></li>
+                            <li><a href="#">Мобільні</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="#"><span class="material-icons">mail</span></a>
+            </li>
+            <!-- Останній пункт вирівняний праворуч через float -->
+            <li class="nav-item nav-item-right">
+                <a href="#"><span class="material-icons">account_circle</span></a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- ВЕРТИКАЛЬНА ПАНЕЛЬ НАВІГАЦІЇ (Фіксована повна висота зліва) -->
+    <nav class="navbar-vertical">
+        <ul class="v-list">
+            <li class="v-item active">
+                <a href="#">
+                    <span class="material-icons">home</span>
+                    <span>Home</span>
+                </a>
+            </li>
+            <li class="v-item">
+                <a href="#">
+                    <span class="material-icons">description</span>
+                    <span>About</span>
+                </a>
+                <!-- Вкладене підменю (2-й рівень) -->
+                <ul class="v-dropdown">
+                    <li><a href="#">Команда</a></li>
+                    <li><a href="#">Історія</a>
+                        <!-- 3-й рівень вкладеності -->
+                        <ul class="v-dropdown">
+                            <li><a href="#">2024 рік</a></li>
+                            <li><a href="#">2026 рік</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="v-item">
+                <a href="#">
+                    <span class="material-icons">local_cafe</span>
+                    <span>Work With Me</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Вміст сторінки для демонстрації прокручування (sticky/fixed) -->
+    <div class="content">
+        <h1>Демонстрація навігаційних панелей</h1>
+        <p>Прокрутіть сторінку, щоб перевірити роботу липкої (sticky) та фіксованої (fixed) навігації.</p>
+        <div class="spacer"></div>
+    </div>
+
+</body>
+</html>
