@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторна робота №6 - Завдання 5 </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Зафіксована покращена панель у верхній частині (Завдання 5) -->
+    <header class="top-navbar">
+        <div class="nav-container">
+            <div class="nav-links">
+                <a href="#" class="nav-link" tabindex="0">Mail</a>
+                <a href="#" class="nav-link" tabindex="0">Images</a>
+            </div>
+            
+            <div class="nav-tools">
+                <!-- Прихований чекбокс для керування попапом (Завдання 6) -->
+                <input type="checkbox" id="popup-toggle" class="popup-checkbox" tabindex="0">
+                
+                <!-- Кнопка виклику попапу (label) -->
+                <label for="popup-toggle" class="tool-btn popup-button" tabindex="0" aria-label="Меню додатків">
+                    <span class="icon-dots"></span>
+                </label>
+
+                <button class="tool-btn" tabindex="0" aria-label="Сповіщення">🔔</button>
+                <div class="user-profile" tabindex="0" aria-label="Профіль"></div>
+
+                <!-- ВИПАДАЮЧИЙ ПОПАП (ПЛАТФОРМА ПАПКИ) -->
+                <div class="popup-container">
+                    <!-- Чекбокс для стану "More" (розширення та прокрутка) -->
+                    <input type="checkbox" id="more-toggle" class="more-checkbox" tabindex="0">
+
+                    <!-- Вміст папки (отримує фокус для управління стрілками) -->
+                    <div class="popup-content" tabindex="0">
+                        
+                        <!-- Основна сітка іконок (перші 12 елементів) -->
+                        <div class="icon-grid-box">
+                            <a href="#" class="app-item" tabindex="0">
+                                <div class="app-icon">📅</div>
+                                <span class="app-text">Calendar</span>
+                            </a>
+                            <a href="#" class="app-item" tabindex="0">
+                                <div class="app-icon">✉️</div>
+                                <span class="app-text">Mail</span>
+                            </a>
+                            <a href="#" class="app-item" tabindex="0">
+                                <div class="app-icon">📰</div>
+                                <span class="app-text">News</span>
+                            </a>
+                            <a href="#" class="app-item" tabindex="0">
+                                <div class="app-icon">🗺️</div>
+                                <span class="app-text">Map</span>
+                            </a>
+                            <!-- Активний елемент із рамкою за зразком -->
+                            <a href="#" class="app-item active-item" tabindex="0">
+                                <div class="app-icon">📁</div>
+                                <span class="app-text">Files</span>
+                            </a>
+                            <a href="#" class="app-item" tabindex="0">
+                                <div class="app-icon">📇</div>
+                                <span class="app-text">Contacts</span>
+                            </a>
+                            <a href="#" class="app-item" tabindex="0">
+                                <div class="app-icon">🌐</div>
+                                <span class="app-text">Translate</span>
+                            </a>
+                            <a href="#" class="app-item" tabindex="0">
+                                <div class="app-icon">▶️</div>
+                                <span class="app-text">Videos</span>
+                            </a>
+                            <a href="#" class="app-item" tabindex="0">
+                                <div class="app-icon">🔍</div>
+                                <span class="app-text">Search</span>
+                            </a>
+                            <a href="#" class="app-item" tabindex="0">
+                                <div class="app-icon">🖼️</div>
+                                <span class="app-text">Photos</span>
+                            </a>
+                            <a href="#" class="app-item" tabindex="0">
+                                <div class="app-icon">🧩</div>
+                                <span class="app-text">Apps</span>
+                            </a>
+                            <a href="#" class="app-item" tabindex="0">
+                                <div class="app-icon">📄</div>
+                                <span class="app-text">Document</span>
+                            </a>
+                        </div>
+
+                        <!-- Кнопка «More» -->
+                        <label for="more-toggle" class="more-button" tabindex="0">More</label>
+
+                        <!-- Розширені іконки (з'являються після натискання More) -->
+                        <div class="extended-icons-box">
+                            <div class="icon-grid-box">
+                                <a href="#" class="app-item" tabindex="0">
+                                    <div class="app-icon">💬</div>
+                                    <span class="app-text">Chat</span>
+                                </a>
+                                <a href="#" class="app-item" tabindex="0">
+                                    <div class="app-icon">💻</div>
+                                    <span class="app-text">Classroom</span>
+                                </a>
+                                <a href="#" class="app-item" tabindex="0">
+                                    <div class="app-icon">⭐</div>
+                                    <span class="app-text">Collection</span>
+                                </a>
+                                <a href="#" class="app-item" tabindex="0">
+                                    <div class="app-icon">🔴</div>
+                                    <span class="app-text">Mars</span>
+                                </a>
+                                <a href="#" class="app-item" tabindex="0">
+                                    <div class="app-icon">📑</div>
+                                    <span class="app-text">Blogs</span>
+                                </a>
+                                <a href="#" class="app-item" tabindex="0">
+                                    <div class="app-icon">📢</div>
+                                    <span class="app-text">Promos</span>
+                                </a>
+                            </div>
+                            <div class="footer-text">Even more from Kottans</div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+</body>
+</html>

@@ -1,0 +1,940 @@
+/* Завдання 1 */
+
+body {
+    margin: 0;
+    font-family: Calibri, Arial, sans-serif;
+}
+
+.wrapper {
+    position: relative;
+    width: 900px;
+    height: 410px;
+    margin: 30px auto;
+}
+
+/* Усі три блоки однакового розміру */
+.box {
+    position: absolute;
+    box-sizing: border-box;
+    width: 360px;
+    height: 140px;
+    border: 3px solid #222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 38px;
+    line-height: 50px;
+    padding: 0 20px 14px;
+}
+
+/* Зелений: найнижчий шар */
+.green {
+    left: 262px;
+    top: 140px;
+    background-color: #00b050;
+    color: #1a1a1a;
+    z-index: 1;
+}
+
+/* Синій: внизу ліворуч, над зеленим */
+.blue {
+    left: 20px;
+    top: 255px;
+    background-color: #538dd5;
+    color: #ffffff;
+    z-index: 2;
+}
+
+/* Блакитний: угорі праворуч, теж над зеленим */
+.lightblue {
+    left: 510px;
+    top: 25px;
+    background-color: #92cddc;
+    color: #1a1a1a;
+    z-index: 3;
+}
+
+/* Візерунок блакитного блоку */
+.lightblue::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background:
+        /* зелена частина нижньої лінії (зліва) */
+        linear-gradient(#00b050, #00b050) 0 82% / 31% 2px no-repeat,
+        /* біла частина нижньої лінії (справа) */
+        linear-gradient(rgba(255,255,255,.85), rgba(255,255,255,.85)) 100% 82% / 69% 2px no-repeat,
+        /* верхня горизонтальна лінія */
+        linear-gradient(rgba(255,255,255,.85), rgba(255,255,255,.85)) 0 14% / 100% 2px no-repeat,
+        /* середня горизонтальна лінія */
+        linear-gradient(rgba(255,255,255,.85), rgba(255,255,255,.85)) 0 43% / 100% 2px no-repeat,
+        /* довга вертикальна: від середньої лінії до низу */
+        linear-gradient(rgba(255,255,255,.85), rgba(255,255,255,.85)) 70% 100% / 2px 57% no-repeat,
+        /* дві короткі вертикальні: від нижньої лінії до низу */
+        linear-gradient(rgba(255,255,255,.85), rgba(255,255,255,.85)) 49% 100% / 2px 18% no-repeat,
+        linear-gradient(rgba(255,255,255,.85), rgba(255,255,255,.85)) 58% 100% / 2px 18% no-repeat;
+}
+
+/* Завдання 2 */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Контейнер Завдання 2 */
+.task2-container {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+/* Ліва колонка */
+.task2-left-column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Загальні стилі для блоків Завдання 2 */
+.task2-block {
+    border: 2px solid #000000;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+    color: #ffffff;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Блок 1 (зелений, завжди видимий) */
+.task2-block-1 {
+    background-color: #00aa4f;
+    width: 180px;
+    height: 60px;
+    font-size: 18px;
+}
+
+/* Блок 2 (синій, спочатку прихований) */
+.task2-block-2 {
+    background-color: #4a86e8;
+    width: 180px;
+    height: 140px;
+    font-size: 16px;
+    padding: 10px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Блок 3 (фіолетовий, спочатку прихований) */
+.task2-block-3 {
+    background-color: #6a4c93;
+    width: 220px;
+    height: 215px;
+    font-size: 16px;
+    padding: 10px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Поява Блоку 2 при наведенні на Блок 1 або коли курсор на ньому */
+.task2-block-1:hover + .task2-block-2,
+.task2-block-2:hover {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Поява Блоку 3 при наведенні на Блок 2 */
+.task2-container:has(.task2-block-2:hover) .task2-block-3 {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Завдання 3 */
+
+/* Загальні стилі та фон сторінки */
+body {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    background-color: #2c2838;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Стилізація форми */
+.form {
+    width: 600px;
+    box-sizing: border-box;
+    padding: 30px;
+    border: 5px solid #ffd166;
+    border-radius: 16px;
+    background: linear-gradient(to bottom right, #1f1c2c, #928dab);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Заголовок форми */
+.form-title {
+    position: relative;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* Перша літера заголовка */
+.form-title:first-letter {
+    font-size: 48px;
+    color: #ffd166;
+}
+
+/* Декоративні лінії зліва та справа від заголовка */
+.form-title:before,
+.form-title:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #ffd166;
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.form-title:before {
+    left: 0;
+}
+
+.form-title:after {
+    right: 0;
+}
+
+.form-title:hover:before,
+.form-title:hover:after {
+    width: 90px;
+    background-color: #06d6a0;
+}
+
+/* Вступний текст */
+.form-intro {
+    font-size: 16px;
+    color: #e8e6f2;
+    margin-bottom: 20px;
+}
+
+.form-intro:first-line {
+    color: #ffd166;
+    font-weight: 700;
+}
+
+/* Контейнер полів (Clearfix) */
+.form-fields {
+    position: relative;
+}
+
+.form-fields:after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+/* Групи полів (два стовпці) */
+.form-group {
+    float: left;
+    width: 48%;
+    margin-bottom: 15px;
+}
+
+.form-fields .form-group:nth-child(odd) {
+    margin-right: 4%;
+}
+
+.form-fields .form-group:nth-child(even) {
+    margin-right: 0;
+}
+
+.form-group--full {
+    width: 100%;
+    float: none;
+    clear: both;
+}
+
+/* Мітки (Labels) */
+.form-label {
+    display: block;
+    font-size: 18px;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+/* Зірочка для обов'язкових полів */
+.form-label--required:after {
+    content: ' *';
+    color: #ff6b6b;
+}
+
+/* Поля введення тексту, пошти, телефону */
+.form-input {
+    width: 100%;
+    height: 36px;
+    padding: 0 10px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #222222;
+    background-color: #f1ecff;
+    border-radius: 8px;
+    border: none;
+    border-bottom: 4px solid transparent;
+    box-sizing: border-box;
+    outline: none;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.form-input:hover {
+    border-bottom-color: #ffd166;
+}
+
+.form-input:focus {
+    border-bottom-color: #06d6a0;
+    background-color: #ffffff;
+}
+
+/* Поле пароля */
+.form-input--password:hover {
+    border-bottom-color: #ff9f1c;
+}
+
+.form-input--password:focus {
+    border-bottom-color: #00b4d8;
+    background-color: #ffffff;
+}
+
+/* Поле для багаторядкового тексту (textarea) */
+.form-textarea {
+    width: 100%;
+    height: 80px;
+    resize: none;
+    padding: 5px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #222222;
+    background-color: #f1ecff;
+    border-radius: 8px;
+    border: none;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.form-textarea:hover {
+    box-shadow: 0 0 10px 5px rgba(255, 209, 102, 0.6);
+}
+
+.form-textarea:focus {
+    box-shadow: 0 0 10px 5px rgba(6, 214, 160, 0.6);
+    background-color: #ffffff;
+}
+
+/* Список вимог до пароля */
+.form-hints {
+    list-style: none;
+    padding-left: 0;
+    margin: 15px 0;
+}
+
+.form-hints li {
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+.form-hints li:first-child {
+    font-weight: 700;
+}
+
+.form-hints li:last-child {
+    margin-bottom: 0;
+}
+
+.form-hints li:nth-child(odd) {
+    color: #ffffff;
+}
+
+.form-hints li:nth-child(even) {
+    color: #d9d9e3;
+}
+
+/* Маркери */
+.form-hints li:before {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ffd166;
+    margin-right: 12px;
+    transition: background-color 0.2s ease;
+}
+
+.form-hints li:hover:before {
+    background-color: #06d6a0;
+}
+
+/* Блок правил та чекбокса */
+.form-rules {
+    margin: 20px 0;
+    color: #ffffff;
+}
+
+.form-rules label {
+    font-size: 16px;
+}
+
+/* Посилання на правила */
+.rules-link:link {
+    color: #ffd166;
+    text-decoration: underline;
+}
+
+.rules-link:visited {
+    color: #c9b6ff;
+}
+
+.rules-link:hover {
+    color: #ffffff;
+}
+
+.rules-link:active {
+    color: #ef476f;
+}
+
+/* Кнопки */
+.form-buttons {
+    text-align: right;
+}
+
+.btn {
+    min-width: 160px;
+    height: 44px;
+    padding: 0 15px;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    background-color: transparent;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.btn:last-child {
+    margin-left: 15px;
+}
+
+/* Кнопка скасування */
+.btn-reset {
+    border: 3px solid #ef476f;
+    color: #ef476f;
+    border-radius: 8px;
+}
+
+.btn-reset:hover {
+    color: #ffffff;
+    background-color: #ef476f;
+    border-radius: 15px;
+}
+
+.btn-reset:focus {
+    outline: 3px dashed #ffd166;
+}
+
+.btn-reset:active {
+    border: 3px solid #ffd166;
+    background-color: #a8203d;
+    border-radius: 25px;
+    position: relative;
+    top: 2px;
+}
+
+.btn-reset:active:after {
+    content: ' ✖';
+}
+
+/* Кнопка відправки */
+.btn-submit {
+    border: 3px solid #06d6a0;
+    color: #06d6a0;
+    border-radius: 8px;
+}
+
+.btn-submit:hover {
+    color: #ffffff;
+    background-color: #06d6a0;
+    border-radius: 15px;
+}
+
+.btn-submit:focus {
+    outline: 3px dashed #ffd166;
+}
+
+.btn-submit:active {
+    border: 3px solid #ffd166;
+    background-color: #04785a;
+    border-radius: 25px;
+    position: relative;
+    top: 2px;
+}
+
+.btn-submit:active:after {
+    content: ' ✔';
+}
+
+/* Завдання 4 */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f4f9;
+    /* Робимо відступи для сторінки, щоб контент не ховався під панелі */
+    padding-top: 54px;   /* Висота горизонтальної панелі */
+    padding-left: 220px;  /* Ширина вертикальної панелі */
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ==========================================
+   ГОРИЗОНТАЛЬНА ПАНЕЛЬ НАВІГАЦІЇ (ВГОРІ)
+   ========================================== */
+.navbar-horizontal {
+    position: fixed; /* Фіксуємо у самому верху екрана */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #454545;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.navbar-horizontal .nav-list {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.navbar-horizontal .nav-item {
+    float: left;
+    position: relative;
+}
+
+/* Вирівнювання останнього пункту справа сторінки через float */
+.navbar-horizontal .nav-item-right {
+    float: right;
+}
+
+.navbar-horizontal .nav-item > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 25px;
+    color: #ffffff;
+    transition: background-color 0.3s;
+}
+
+/* Активний пункт та ефект наведені (:hover) */
+.navbar-horizontal .nav-item.active > a,
+.navbar-horizontal .nav-item > a:hover {
+    background-color: #4CAF50;
+}
+
+/* Випадаючі списки */
+.navbar-horizontal .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #555555;
+    min-width: 160px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.navbar-horizontal .dropdown li {
+    float: none;
+}
+
+.navbar-horizontal .dropdown a {
+    padding: 12px 16px;
+    display: block;
+    color: white;
+    text-align: left;
+}
+
+.navbar-horizontal .dropdown a:hover {
+    background-color: #666666;
+}
+
+.navbar-horizontal .nav-item:hover > .dropdown,
+.navbar-horizontal .dropdown li:hover > .dropdown {
+    display: block;
+}
+
+.navbar-horizontal .dropdown .dropdown {
+    top: 0;
+    left: 100%;
+}
+
+
+/* ==========================================
+   ВЕРТИКАЛЬНА ПАНЕЛЬ НАВІГАЦІЇ (ПІД ГОРИЗОНТАЛЬНОЮ)
+   ========================================== */
+.navbar-vertical {
+    position: fixed;
+    top: 54px; /* Починається одразу під горизонтальною панеллю */
+    left: 0;
+    width: 220px;
+    height: calc(100% - 54px); /* Висота з урахуванням верхньої панелі */
+    background-color: #007acc;
+    z-index: 999;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+    box-sizing: border-box;
+}
+
+.navbar-vertical .v-item {
+    position: relative;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.navbar-vertical .v-item > a {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    color: #ffffff;
+    font-weight: 500;
+    gap: 12px;
+    transition: background-color 0.3s;
+}
+
+.navbar-vertical .v-item.active > a,
+.navbar-vertical .v-item > a:hover {
+    background-color: #005999;
+}
+
+.navbar-vertical .v-dropdown {
+    display: none;
+    background-color: #005f99;
+    padding-left: 15px;
+}
+
+.navbar-vertical .v-item:hover > .v-dropdown,
+.navbar-vertical .v-dropdown li:hover > .v-dropdown {
+    display: block;
+}
+
+.navbar-vertical .v-dropdown a {
+    padding: 10px 15px;
+    font-size: 14px;
+    display: block;
+    color: #ffffff;
+}
+
+.navbar-vertical .v-dropdown a:hover {
+    background-color: #004d7a;
+}
+
+
+/* ==========================================
+   СТИЛІ ДЛЯ ДЕМОНСТРАЦІЇ СТОРІНКИ
+   ========================================== */
+.content {
+    padding: 40px;
+    color: #333;
+}
+
+.spacer {
+    height: 1500px;
+}
+
+/* Завдання 5 */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    padding-top: 70px; 
+}
+
+/* ==========================================
+   ВЕРХНЯ ПАНЕЛЬ (ЗАВДАННЯ 5)
+   ========================================== */
+.top-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 64px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 30px;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: relative;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #555555;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 6px 10px;
+    border-radius: 4px;
+    transition: color 0.2s;
+}
+
+.nav-link:hover {
+    color: #000000;
+}
+
+.nav-link:focus,
+.tool-btn:focus,
+.user-profile:focus {
+    outline: 2px solid #4285f4;
+}
+
+.nav-tools {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+}
+
+.tool-btn {
+    background: transparent;
+    border: none;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 16px;
+    color: #555555;
+    transition: background-color 0.2s;
+}
+
+.tool-btn:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.icon-dots {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: radial-gradient(circle, #555555 2px, transparent 2.5px);
+    background-size: 6px 6px;
+    background-position: center;
+}
+
+.user-profile {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #7c3aed, #9333ea);
+    cursor: pointer;
+}
+
+/* Ховаємо чекбокси, але залишаємо їх доступними для фокусу */
+.popup-checkbox,
+.more-checkbox {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* ==========================================
+   ПОПАП / ПАПКА (ЗАВДАННЯ 6)
+   ========================================== */
+.popup-container {
+    position: absolute;
+    top: 52px;
+    right: 0;
+    width: 330px;
+    background: #ffffff;
+    border: 1px solid #d0d0d0;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    
+    /* Початковий стан: невидимий */
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    z-index: 1000;
+}
+
+/* Трикутник зверху попапу */
+.popup-container::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    right: 60px;
+    width: 14px;
+    height: 14px;
+    background: #ffffff;
+    border-top: 1px solid #d0d0d0;
+    border-left: 1px solid #d0d0d0;
+    transform: rotate(45deg);
+}
+
+/* Активний стан (попап видимий при натисканні) */
+.popup-checkbox:checked ~ .popup-container {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup-content {
+    max-height: 420px;
+    overflow-y: hidden;
+    border-radius: 8px;
+    outline: none;
+}
+
+.popup-content:focus {
+    outline: 2px solid #4285f4;
+}
+
+.icon-grid-box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px 10px;
+    padding: 20px 15px;
+}
+
+.app-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px 5px;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    transition: all 0.2s;
+}
+
+.app-item:hover {
+    border-color: #d0d0d0;
+    background-color: #f8f9fa;
+}
+
+.app-item:focus {
+    outline: none;
+    border-color: #4285f4;
+    box-shadow: 0 0 4px rgba(66, 133, 244, 0.5);
+}
+
+.active-item {
+    border-color: #b0c4de;
+}
+
+.app-icon {
+    font-size: 26px;
+    margin-bottom: 6px;
+}
+
+.app-text {
+    font-size: 12px;
+    color: #333333;
+    text-align: center;
+}
+
+.more-button {
+    display: block;
+    text-align: center;
+    padding: 12px;
+    background-color: #f1f3f4;
+    color: #333333;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    border-top: 1px solid #e0e0e0;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    transition: background-color 0.2s;
+}
+
+.more-button:hover {
+    background-color: #e8eaed;
+}
+
+.more-button:focus {
+    outline: 2px solid #4285f4;
+    background-color: #e8eaed;
+}
+
+.extended-icons-box {
+    display: none;
+    border-top: 1px solid #e0e0e0;
+    background-color: #fafafa;
+}
+
+.footer-text {
+    text-align: center;
+    font-size: 12px;
+    color: #777777;
+    padding: 10px;
+}
+
+/* Розширений стан та прокручування після натискання More */
+.more-checkbox:checked ~ .popup-content {
+    overflow-y: auto;
+    max-height: 480px;
+}
+
+.more-checkbox:checked ~ .popup-content .extended-icons-box {
+    display: block;
+}
+
+.more-checkbox:checked ~ .popup-content .more-button {
+    display: none;
+}
