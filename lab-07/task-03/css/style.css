@@ -1,0 +1,157 @@
+:root {
+  --color-text: #444;
+  --color-text-strong: #333;
+  --color-muted: #8f8f8f;
+  --color-border: #c9c9c9;
+  --color-bg: #fff;
+
+  --font-main: "Roboto", Arial, sans-serif;
+
+  --fs-city: 40px;
+  --fs-meta: 16px;
+  --fs-temp: 56px;
+  --fs-unit: 18px;
+  --fs-details: 16px;
+  --fs-day: 18px;
+  --fs-high: 20px;
+  --fs-pollen: 18px;
+
+  --icon-current: 72px;
+  --icon-day: 64px;
+  --row-padding: 16px;
+  --page-padding: 16px;
+}
+
+@media (min-width: 600px) {
+  :root {
+    --fs-city: 64px;
+    --fs-meta: 18px;
+    --fs-temp: 64px;
+    --fs-unit: 20px;
+    --fs-details: 20px;
+    --fs-day: 20px;
+    --fs-high: 22px;
+    --fs-pollen: 22px;
+
+    --icon-current: 100px;
+    --icon-day: 80px;
+    --row-padding: 24px;
+    --page-padding: 32px;
+  }
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-main);
+}
+
+.weather {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: var(--page-padding);
+}
+
+.current__city {
+  font-size: var(--fs-city);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--color-text-strong);
+}
+
+.current__date,
+.current__sky {
+  font-size: var(--fs-meta);
+  font-weight: 300;
+  line-height: 1.3;
+}
+
+.current__body {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 40px;
+  margin-top: 8px;
+}
+
+.current__temp {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.current__icon {
+  width: var(--icon-current);
+  height: auto;
+}
+
+.current__degrees {
+  font-size: var(--fs-temp);
+  font-weight: 300;
+  line-height: 1;
+  color: var(--color-text-strong);
+}
+
+.current__unit {
+  margin-left: 4px;
+  font-size: var(--fs-unit);
+  vertical-align: top;
+}
+
+.current__details {
+  font-size: var(--fs-details);
+  font-weight: 300;
+  line-height: 1.35;
+  color: var(--color-muted);
+}
+
+.forecast {
+  margin-top: 32px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.day {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: var(--row-padding) 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.day__name {
+  flex: 1.3 1 0;
+  font-size: var(--fs-day);
+  font-weight: 700;
+  color: var(--color-text-strong);
+}
+
+.day__icon {
+  flex: 0 0 var(--icon-day);
+  width: var(--icon-day);
+  height: auto;
+  margin-right: auto;
+}
+
+.day__temp {
+  display: flex;
+  flex: 0.9 1 0;
+  flex-direction: column;
+  line-height: 1.35;
+}
+
+.day__high {
+  font-size: var(--fs-high);
+  color: var(--color-text-strong);
+}
+
+.day__low {
+  font-size: var(--fs-high);
+  color: var(--color-muted);
+}
+
+.day__pollen {
+  flex: 1.1 1 0;
+  font-size: var(--fs-pollen);
+  font-weight: 300;
+  color: var(--color-muted);
+}
