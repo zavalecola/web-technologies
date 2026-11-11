@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Завдання 4 — Картки (CSS Grid)</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Робимо так, щоб обличчя та текст на картинках гарно вміщувалися і не обрізалися */
+    .card__img {
+      object-fit: contain !important;
+      background-color: #000;
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="cards">
+      <!-- Велика головна картка зліва -->
+      <article class="card card--large">
+        <img class="card__img" src="images/sticker (19).webp" alt="Лягай спати студенте">
+        <div class="card__body">
+          <h2 class="card__title">Режим відпочинку</h2>
+          <p class="card__text">Лягай спати студенте, солодких тобі снів...&lt;3</p>
+          <a class="card__btn" href="#">Спати</a>
+        </div>
+      </article>
+
+      <!-- Права колонка — картка 1 -->
+      <article class="card card--side">
+        <img class="card__img" src="images/sticker (15).webp" alt="Володимир Комісарчук">
+        <div class="card__body">
+          <h2 class="card__title">Lorem Ipsum</h2>
+          <p class="card__text">«І пайтон жіноча мова» — класика програмування від Володимира.</p>
+          <a class="card__btn" href="#">Детальніше</a>
+        </div>
+      </article>
+
+      <!-- Права колонка — картка 2 -->
+      <article class="card">
+        <img class="card__img" src="images/sticker (16).webp" alt="Відрахований">
+        <div class="card__body">
+          <h2 class="card__title">Увага!</h2>
+          <p class="card__text">Коли дедлайн був учора, а ти ще нічого не починав робити.</p>
+          <a class="card__btn" href="#">Рятуватись</a>
+        </div>
+      </article>
+
+      <!-- Права колонка — картка 3 -->
+      <article class="card">
+        <img class="card__img" src="images/sticker (17).webp" alt="Троллінг">
+        <div class="card__body">
+          <h2 class="card__title">Произошел троллинг</h2>
+          <p class="card__text">Треба фільтрувати, коли доречно розкидатись матами на лабораторній.</p>
+          <a class="card__btn" href="#">Читати</a>
+        </div>
+      </article>
+
+      <!-- Додаткові картки з твоїми новими картинками -->
+      <article class="card">
+        <img class="card__img" src="images/sticker (20).webp" alt="Та невже?">
+        <div class="card__body">
+          <h2 class="card__title">Перевірка</h2>
+          <p class="card__text">Та невже ти досі робиш цю лабораторну роботу вночі?</p>
+          <a class="card__btn" href="#">Зрозуміти</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <img class="card__img" src="images/sticker (21).webp" alt="Маєш гарну лабораторну">
+        <div class="card__body">
+          <h2 class="card__title">Фінал</h2>
+          <p class="card__text">Маєш гарну лабораторну та заслужену оцінку!</p>
+          <a class="card__btn" href="#">Готово</a>
+        </div>
+      </article>
+    </div>
+  </main>
+</body>
+</html>
